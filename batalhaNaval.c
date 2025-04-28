@@ -1,32 +1,22 @@
 #include <stdio.h>
 
 int main() {
-int tabuleiro[10][10]= {0};
-int coluna_vertical=2;
+    // Criando um tabuleiro 5x5
+    int tabuleiro[5][5] = {0};
 
-for (int linha = 1; linha <= 4; linha++) {
-    tabuleiro[linha][coluna_vertical] = 3;
-}
-int linha_horizontal = 6;
-for (int coluna = 3; coluna <= 7; coluna++) {
-    tabuleiro[linha_horizontal][coluna] = 3;
-}
-
-for (int i = 0; i < 5; i++) {
-    tabuleiro[i][i] = 3;
-}
-for (int i = 0; i < 5; i++) {
-    tabuleiro[i][9 - i] = 3;
-}
-
-printf("Tabuleiro de Batalha Naval:\n");
-    for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            printf("%d ", tabuleiro[i][j]);
-        }
-        printf("\n");
+    // Posição inicial do navio vertical (coluna 1, da linha 1 à 3)
+    int x1 = 1; // coluna
+    for (int y = 1; y <= 3; y++) {
+        tabuleiro[y][x1] = 1;
+        printf("Navio vertical em: (%d, %d)\n", y, x1);
     }
+
+    // Posição inicial do navio horizontal (linha 4, da coluna 2 à 4)
+    int y2 = 4; // linha
+    for (int x = 2; x <= 4; x++) {
+        tabuleiro[y2][x] = 2;
+        printf("Navio horizontal em: (%d, %d)\n", y2, x);
+    }
+
     return 0;
 }
-
-
